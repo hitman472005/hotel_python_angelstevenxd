@@ -1,14 +1,17 @@
+from datetime import datetime
+
 import os
 
-print("********************")
-print("* Angel Steven #16 *")
-print("********************")
-print("*  Hotel Barcelo   *")
-print("********************")
+print("*************************")
+print("* XD Angel Steven #16 XD*")
+print("*************************")
+print("*************************")
+print("*     Hotel Barcelo     *")
+print("*************************")
 
-print("********************")
-print("*  Bienvenido/a    *")
-print("********************")
+print("*************************************")
+print("*  Bienvenido/a  a nuestro hotel    *")
+print("*************************************")
 
 def main():
 
@@ -23,18 +26,30 @@ def main():
 
 
     
-    nombre_autobus = input("Ingrese su nombre de autobus del grupo de llegada: ")
     nombre = input("Ingrese su nombre: ")
     Apellido = input("Ingrese su Apellido: ")
-    Fecha_e = input("Ingrese la fecha de llegada: ")
-
     print()
     print("La Duracion de noches vale 100")
     print()
-    dias = int(input("Ingrese cuantos dias se quedara: "))
+
+   
+#****************************************************************************   Fecha
+    fecha_llegada = datetime.strptime(input("ingrese la fecha de llegadada: "), "%d/%m/%Y")
+    fecha_salida = datetime.strptime(input("ingrese la fecha de Salida: "), "%d/%m/%Y")
+
+    dias = fecha_llegada - fecha_salida
+
+    cantidad_dias_Duraras = abs(fecha_llegada - fecha_salida).days
+
+    print("cantidad de dias que se ospeda en el hotel son:" , abs(dias.days)) 
+
+    print()
+#****************************************************************************
+
+
     Cantidad_persona = int(input("Ingrese la cantidad de personas: "))
     
-    cantidad_de_dias = dias * 100
+    cantidad_de_dias = cantidad_dias_Duraras * 100
 
     reservacion = reservacion + cantidad_de_dias
     
@@ -81,36 +96,45 @@ def main():
         print("Exelente eleccion")
         print()
         print()
-
-        print(" **************************************************************")
-        print("      Resultado de almacenado la recervacion                   ")
-        print("                                                               ")
-        print(f"  Nombre general del grupo: {nombre_autobus}                  ")
-        print("                                                               ")
-        print(f"  Nombre Completo V. : {nombre} {Apellido}                    ")
-        print("                                                               ")
-        print(f"  Fecha de entrada :  {Fecha_e}                               ")
-        print("                                                               ")
-        print(f"  Dias que pasara de servicio :  {dias}                       ")
-        print("                                                               ")
-        print(f"  Tipo de Habitacion :  {tipo_habitacion}                     ")
-        print("                                                               ")
-        print(f"  Cantidad de personas (Adultas) : {Cantidad_persona}         ")
-        print("                                                               ")
-        print(f"  Cantidad de niños : {Cantidad_hijos}                        ")
-        print("                                                               ")
-        print(f"  Personas en total : {personas_total}                        ")
-        print("                                                               ")
-        print(f"  Precio Total : {resultado_total}                            ")
-        print("                                                               ")
-        print(" ***************************************************************")
+        print(" ************************************************************************************")
+        print("                         Resultado de almacenado la recervacion                      ")
+        print("                                                                                     ")
+        print(f"  Nombre Completo V. : {nombre} {Apellido}                                          ")
+        print("                                                                                     ")
+        print(f"  Fecha de entrada :  {fecha_llegada.day}/{fecha_llegada.month}/{fecha_llegada.year}")
+        print("                                                                                     ")
+        print(f"  Fecha de salida :  {fecha_salida.day}/{fecha_salida.month}/{fecha_salida.year}    ")
+        print("                                                                                     ")
+        print(f"  tiempo que tardara en el hotel : {cantidad_dias_Duraras} dias                     ")
+        print("                                                                                     ")
+        print(f"  Tipo de Habitacion solicitada :  {tipo_habitacion}             ")
+        print("                                                                  ")
+        print(f"  Cantidad de personas (Adultas) : {Cantidad_persona}            ")
+        print("                                                                  ")
+        print(f"  Cantidad de niños : {Cantidad_hijos}                           ")
+        print("                                                                  ")
+        print(f"  Personas en total : {personas_total}                           ")
+        print("                                                                  ")
+        print(f"  Precio Total : {resultado_total}                               ")
+        print("                                                                  ")
+        print("******************************************************************")
         print()
         print()
         print()
-        Salir = input("Confirmar Salida S/N ")
+        Salir = input("Desea continuar con el siguiente visitante S/N  ")
             
-        if(Salir == "N") or (Salir == "n"):
+        if(Salir == "S") or (Salir == "s"):
+            os.system("cls")
             return main()
+
+            
+        elif(Salir == "N") or (Salir == "n"):
+             os.system("pause")            
+        else:
+            print("esa opcion no exite")
+            os.system("cls")
+            return main()
+       
             
 
     elif opcion == "2":
@@ -124,46 +148,65 @@ def main():
         print()
         print("Buena eleccion")
         print()
-        print(" **************************************************************")
-        print("      Resultado de almacenado la recervacion                   ")
-        print("                                                               ")
-        print(f"  Nombre general del grupo: {nombre_autobus}                  ")
-        print("                                                               ")
-        print(f"  Nombre Completo V. : {nombre} {Apellido}                    ")
-        print("                                                               ")
-        print(f"  Fecha de entrada :  {Fecha_e}                               ")
-        print("                                                               ")
-        print(f"  Dias que pasara de servicio :  {dias}                       ")
-        print("                                                               ")
-        print(f"  Tipo de Habitacion :  {tipo_habitacion}                     ")
-        print("                                                               ")
-        print(f"  Cantidad de personas (Adultas) : {Cantidad_persona}         ")
-        print("                                                               ")
-        print(f"  Cantidad de niños : {Cantidad_hijos}                        ")
-        print("                                                               ")
-        print(f"  Personas en total : {personas_total}                        ")
-        print("                                                               ")
-        print(f"  Precio Total : {resultado_total}                            ")
-        print("                                                               ")
         print(" *****************************************************************")
+        print("      Resultado de almacenado la recervacion                      ")
+        print("                                                                  ")
+        print(f"  Nombre Completo V. : {nombre} {Apellido}                       ")
+        print("                                                                  ")
+        print(f"  Fecha de entrada :  {fecha_llegada}                            ")
+        print("                                                                  ")
+        print(f"  Fecha de salida :  {fecha_salida}                              ")
+        print("                                                                  ")
+        print(f"  tiempo que tardara en el hotel : {cantidad_dias_Duraras} dias  ")
+        print("                                                                  ")
+        print(f"  Tipo de Habitacion solicitada :  {tipo_habitacion}             ")
+        print("                                                                  ")
+        print(f"  Cantidad de personas (Adultas) : {Cantidad_persona}            ")
+        print("                                                                  ")
+        print(f"  Cantidad de niños : {Cantidad_hijos}                           ")
+        print("                                                                  ")
+        print(f"  Personas en total : {personas_total}                           ")
+        print("                                                                  ")
+        print(f"  Precio Total : {resultado_total}                               ")
+        print("                                                                  ")
+        print(" ******************************************************************")
         print()
         print()
         print()
-        Salir = input("Confirmar Salida S/N ")
+        Salir = input("Desea continuar con el siguiente visitante S/N  ")
             
-        if(Salir == "N") or (Salir == "n"):
-            return main()     
+        if(Salir == "S") or (Salir == "s"):
             
+            os.system("cls")
+            return main()
+            
+        elif(Salir == "N") or (Salir == "n"):
+            os.system("pause")
+
+        else:
+            print("esa opcion no exite")
+            os.system("cls")
+            return main()
+      
     else:
-        
 
         print("Esa opcion no existe")
         
         print()
-        Salir = input("Confirmar Salida S/N ")
+        
+        Salir = input("Desea continuar con el siguiente visitante S/N ")
             
-        if(Salir == "N") or (Salir == "n"):
+        if(Salir == "S") or (Salir == "s"):
+
+            os.system("cls")
+            return main()
+            
+        elif(Salir == "N") or (Salir == "n"):
+             os.system("pause")
+             
+        else:
+            print("esa opcion no exite")
             os.system("cls")
             return main()
 
-main()  
+main()     
