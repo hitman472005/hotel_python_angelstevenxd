@@ -92,6 +92,8 @@ def main():
 
         tipo_habitacion = "Premium"
 
+        resultado_total_ITBIS = resultado_total * 0.18
+
         print()
         print("Exelente eleccion")
         print()
@@ -115,7 +117,9 @@ def main():
         print("                                                                  ")
         print(f"  Personas en total : {personas_total}                           ")
         print("                                                                  ")
-        print(f"  Precio Total : {resultado_total}                               ")
+        print(f"  Precio Total sin ITBIS : {resultado_total}                     ")
+        print("                                                                  ")
+        print(f"  Precio Total con ITBIS : {resultado_total_ITBIS}               ")
         print("                                                                  ")
         print("******************************************************************")
         print()
@@ -145,6 +149,8 @@ def main():
 
         tipo_habitacion = "Normal"
 
+        resultado_total_ITBIS = resultado_total * 0.18
+
         print()
         print("Buena eleccion")
         print()
@@ -167,8 +173,9 @@ def main():
         print("                                                                  ")
         print(f"  Personas en total : {personas_total}                           ")
         print("                                                                  ")
-        print(f"  Precio Total : {resultado_total}                               ")
+        print(f"  Precio Total sin ITBIS : {resultado_total}                     ")
         print("                                                                  ")
+        print(f"  Precio Total con ITBIS : {resultado_total_ITBIS}               ")
         print(" ******************************************************************")
         print()
         print()
@@ -209,4 +216,4 @@ def main():
             os.system("cls")
             return main()
 
-main()     
+main()      
